@@ -8,6 +8,37 @@ class ArtRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+          child: ListView(
+        children: [
+          DrawerHeader(
+            child: Text(
+              'Choose your art',
+              style: TextStyle(fontSize: 24, color: Colors.white),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              image: DecorationImage(
+                  image: AssetImage('galaxy.jpeg'), fit: BoxFit.fill),
+            ),
+          ),
+          ListTile(
+            title: Text(ArtUtil.CARAVAGGIO),
+            trailing: Icon(Icons.art_track),
+            onTap: () => changeRoute(context, ArtUtil.CARAVAGGIO),
+          ),
+          ListTile(
+            title: Text(ArtUtil.MONET),
+            trailing: Icon(Icons.art_track),
+            onTap: () => changeRoute(context, ArtUtil.MONET),
+          ),
+          ListTile(
+            title: Text(ArtUtil.VAN_GOGH),
+            trailing: Icon(Icons.art_track),
+            onTap: () => changeRoute(context, ArtUtil.VAN_GOGH),
+          ),
+        ],
+      )),
       appBar: AppBar(
         title: Text('Navigating Art'),
         actions: [

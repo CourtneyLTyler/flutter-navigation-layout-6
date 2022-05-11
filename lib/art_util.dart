@@ -2,7 +2,7 @@ class ArtUtil {
   static const CARAVAGGIO = "Caravaggio";
   static const MONET = "Monet";
   static const VAN_GOGH = "Van Gogh";
-  static const IMG_CARAVAGGIO = "starry-night.webp";
+  static const IMG_CARAVAGGIO = "carvaggio.jpeg";
   static const IMG_MONET = "monet.jpeg";
   static const IMG_VAN_GOGH = "starry-night.webp";
 
