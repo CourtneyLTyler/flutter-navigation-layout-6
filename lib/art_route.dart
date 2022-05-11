@@ -4,7 +4,7 @@ import './art_util.dart';
 class ArtRoute extends StatelessWidget {
   final String art;
   const ArtRoute({Key? key, required this.art}) : super(key: key);
-
+  static int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +60,29 @@ class ArtRoute extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage(art), fit: BoxFit.cover),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.lime[900],
+        currentIndex: _currentIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.art_track),
+            label: ArtUtil.CARAVAGGIO,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.art_track),
+            label: ArtUtil.MONET,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.art_track),
+            label: ArtUtil.VAN_GOGH,
+          ),
+        ],
+        onTap: (index) {
+          String _artist = ArtUtil.menuItems[index];
+          _currentIndex = index;
+          changeRoute(context, _artist);
+        },
       ),
     );
   }
